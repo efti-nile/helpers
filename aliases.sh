@@ -10,3 +10,6 @@ alias gd='git diff'
 alias gs='git status'
 alias gr='git rm'
 
+alias br='. ~/.bashrc'
+alias be='vim ~/.bashrc'
+
