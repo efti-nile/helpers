@@ -10,6 +10,8 @@ alias gd='git diff'
 alias gs='git status'
 alias gr='git rm'
 
-alias br='. ~/.bashrc'
-alias be='vim ~/.bashrc'
+alias br='. ~/.bashrc'    # bash read
+alias be='vim ~/.bashrc'  # bash edit
+
+alias ta='tmux attach"
 
