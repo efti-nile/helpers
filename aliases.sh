@@ -9,6 +9,7 @@ alias gpl='git pull'
 alias gd='git diff'
 alias gs='git status'
 alias gr='git rm'
+alias gm='git mv'
 
 alias br='. ~/.bashrc'    # bash read
 alias be='vim ~/.bashrc'  # bash edit
