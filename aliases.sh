@@ -16,5 +16,5 @@ alias gb='git checkout -b'  # new branch
 alias br='. ~/.bashrc'    # bash read
 alias be='vim ~/.bashrc'  # bash edit
 
-alias ta='tmux attach"
+alias ta='tmux attach'
 
