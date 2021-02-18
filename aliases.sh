@@ -8,8 +8,9 @@ alias gph='git push'
 alias gpl='git pull'
 alias gd='git diff'
 alias gs='git status'
-alias gr='git rm'
-alias gm='git mv'
+alias gr='git restore'
+alias grm='git rm'
+alias gmv='git mv'
 
 alias br='. ~/.bashrc'    # bash read
 alias be='vim ~/.bashrc'  # bash edit
