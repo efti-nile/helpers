@@ -11,6 +11,7 @@ alias gs='git status'
 alias gr='git restore'
 alias grm='git rm'
 alias gmv='git mv'
+alias gch='git checkout'
 alias gb='git checkout -b'  # new branch
 
 alias br='. ~/.bashrc'    # bash read
