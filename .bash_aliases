@@ -14,6 +14,8 @@ alias gmv='git mv'
 alias gch='git checkout'
 alias gcb='git checkout -b'  # new branch
 alias gb='git branch -a'  # list remote and local branches
+alias grv='git remote -v'
+alias gar='git add remote'
 
 alias br='. ~/.bashrc'    # bash read
 alias be='vim ~/.bashrc'  # bash edit
