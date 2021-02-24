@@ -1,7 +1,8 @@
 alias gaa='git add *'
 alias ga='git add'
+alias gch='git checkout'
 alias gc='git commit'
-alias gcm='git commit -m'
+alias gctm='git commit -m'
 alias gca='git commit --amend'
 alias gdnc='git add *; git commit -m "Dummy Message"'  # git do not care
 alias gph='git push'
