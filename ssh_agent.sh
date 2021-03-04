@@ -26,7 +26,7 @@ fi
 unset env
 
 # #
-# My github keys habe prefix gh
+# My github keys have prefix gh
 
 for f in ~/.ssh/gh*ed25519
 do
