@@ -1,13 +1,34 @@
-#!/bin/bash
+# #
+# Start ssh-agent
+#  taken from .bashrc from git
+#  installation on win
 
-set -e
+env=~/.ssh/agent.env
 
-if [ -z "$GIT_HUB_KEY" ]; then
-    echo "GIT_HUB_KEY env. variable should contain a path to a private key for Git Hub"
+agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
+
+agent_start () {
+    (umask 077; ssh-agent >| "$env")
+    . "$env" >| /dev/null ; }
+
+agent_load_env
+
+# agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2= agent not running
+agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
+
+if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
+    agent_start
+    ssh-add
+elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
+    ssh-add
 fi
 
-SSH_AGENT=`ps aux | grep ssh-agent`
-if [ -z "$SSH_AGENT" ]; then
-    eval "$(ssh-agent -s)"
-    ssh-add "$GIT_HUB_KEY"
-fi
+unset env
+
+# #
+# My github keys habe prefix gh
+
+for f in ~/.ssh/gh*ed25519
+do
+    ssh-add $f
+done
