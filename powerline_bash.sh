@@ -1,3 +1,9 @@
+# # 
+# "Enable" powerline
+if [ -d "$HOME/.local/bin" ]; then
+        PATH="$HOME/.local/bin:$PATH"
+fi
+
 # #
 # Enable powerline for bash
 powerline-daemon -q
