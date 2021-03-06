@@ -50,5 +50,14 @@ set lbr
 
 " "
 " Set GVIM font (nice for 2K)
+
 set guifont=Consolas:h12
 
+" "
+" If it's Windows, add some folders
+"  to `runtimepath`
+
+if has('win32') || has('win64')
+  " omnipotence folder
+  set runtimepath=$HOME\.vim
+endif
