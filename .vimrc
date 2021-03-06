@@ -18,18 +18,18 @@ set expandtab
 inoremap <CR> <CR>x<BS>
 
 " "
-" Keys
-
-" Ctrl+j or Ctrl+k to switch between panes
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
-
-" "
 " Hybrid line numbers:
 "  abs for current & rel for other lines
 
 set number relativenumber
 set nu rnu
+
+" "
+" Keys
+
+" Ctrl+j or Ctrl+k to switch between panes
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
 
 " "
 " Whole word wrap LENINGR.. oh, sorry
