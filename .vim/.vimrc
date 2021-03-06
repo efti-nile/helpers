@@ -18,6 +18,11 @@ set expandtab
 inoremap <CR> <CR>x<BS>
 
 " "
+" Using 256 color mode
+
+set t_Co=256
+
+" "
 " Automatically removing trailing whitespace
 
 autocmd FileType c,cpp,java,h,hpp,py,txt,md,sql autocmd BufWritePre <buffer> %s/\s\+$//e
