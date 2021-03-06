@@ -11,11 +11,16 @@ set tabstop=4
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
 
-" On pressing tab, insert 4 spaces
+" on pressing tab, insert 4 spaces
 set expandtab
 
 " use indentation for <o>
 inoremap <CR> <CR>x<BS>
+
+" "
+" Automatically removing trailing whitespace
+
+autocmd FileType c,cpp,java,h,hpp,py,txt,md,sql autocmd BufWritePre <buffer> %s/\s\+$//e
 
 " "
 " Hybrid line numbers:
@@ -32,6 +37,6 @@ map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 
 " "
-" Whole word wrap LENINGR.. oh, sorry
+" Whole word wrap leningr.. oh, sorry
 set wrap
 set lbr
