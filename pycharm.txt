@@ -1,4 +1,0 @@
-# PyCharm
-## Shortcuts
-- Ctrl+Shift+O Open In Opposite Group
-- Ctrl+Shift+D Duplicate Entire Lines
