@@ -58,6 +58,5 @@ set guifont=Consolas:h12
 "  to `runtimepath`
 
 if has('win32') || has('win64')
-  " omnipotence folder
-  set runtimepath=$HOME\.vim
+  set runtimepath=$HOME/.vim,$HOME/vimfiles,$VIM/vimfiles
 endif
