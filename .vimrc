@@ -30,3 +30,8 @@ map <C-K> <C-W>k<C-W>_
 
 set number relativenumber
 set nu rnu
+
+" "
+" Whole word wrap LENINGR.. oh, sorry
+set wrap
+set lbr
