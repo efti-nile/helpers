@@ -22,11 +22,13 @@ inoremap <CR> <CR>x<BS>
 
 autocmd FileType c,cpp,java,h,hpp,py,txt,md,sql autocmd BufWritePre <buffer> %s/\s\+$//e
 
+" also show EOLs as '$'
+set list
+
 " "
 " Hybrid line numbers:
 "  abs for current & rel for other lines
 
-set number relativenumber
 set nu rnu
 
 " "
