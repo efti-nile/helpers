@@ -1,9 +1,9 @@
 " "
-" Indentation
+" Set file type based indentation
+"  folder `indent` contains an indentation
+"  script for different file types
 
 filetype plugin indent on
-set autoindent
-set smartindent
 
 " show existing tab with 4 spaces width
 set tabstop=4
@@ -47,3 +47,8 @@ map <C-K> <C-W>k<C-W>_
 " Whole word wrap leningr.. oh, sorry
 set wrap
 set lbr
+
+" "
+" Set GVIM font (nice for 2K)
+set guifont=Consolas:h12
+
