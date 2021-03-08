@@ -29,7 +29,7 @@ colorscheme deus
 autocmd FileType c,cpp,java,h,hpp,py,txt,md,sql autocmd BufWritePre <buffer> %s/\s\+$//e
 
 " also show EOLs as '$'
-set list
+" set list
 
 " "
 " Hybrid line numbers:
