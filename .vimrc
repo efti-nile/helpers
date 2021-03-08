@@ -18,9 +18,10 @@ set expandtab
 inoremap <CR> <CR>x<BS>
 
 " "
-" Using 256 color mode
+" Using `deus` colorscheme
 
 set t_Co=256
+colorscheme deus
 
 " "
 " Automatically removing trailing whitespace
