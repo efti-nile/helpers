@@ -18,6 +18,9 @@ alias gr='git restore'
 alias grm='git rm'
 alias grv='git remote -v'
 alias gs='git status'
+alias gsc='git config credential.helper store'  # git store credential
+
+alias git_minor='git pull && git add -A && git commit -m minor && git push'
 
 # For Bash
 alias br='. ~/.bashrc'    # bash read
