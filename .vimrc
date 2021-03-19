@@ -35,7 +35,7 @@ autocmd FileType c,cpp,java,h,hpp,py,txt,md,sql autocmd BufWritePre <buffer> %s/
 " Hybrid line numbers:
 "  abs for current & rel for other lines
 
-set nu rnu
+set nu
 
 " "
 " Keys

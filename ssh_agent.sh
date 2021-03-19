@@ -30,5 +30,6 @@ unset env
 
 for f in ~/.ssh/gh*ed25519
 do
-    ssh-add $f
+    ssh-add $f 1> /dev/null
 done
+
