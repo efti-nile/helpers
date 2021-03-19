@@ -23,6 +23,11 @@ alias gsc='git config credential.helper store'  # git store credential
 alias git_minor='git pull && git add -A && git commit -m minor && git push'
 alias git_bugfix='git pull && git add -A && git commit -m bugfix && git push'
 
+# creates file near original one
+iconv_try () {
+    iconv -f $2 -t $3 -o "$1.$3" $1
+}
+
 # For Bash
 alias br='. ~/.bashrc'    # bash read
 alias be='vim ~/.bashrc'  # bash edit
