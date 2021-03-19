@@ -1,3 +1,5 @@
+set encoding=utf-8
+
 " "
 " Set file type based indentation
 "  folder `indent` contains an indentation
@@ -14,9 +16,6 @@ set shiftwidth=4
 " on pressing tab, insert 4 spaces
 set expandtab
 
-" use indentation for <o>
-inoremap <CR> <CR>x<BS>
-
 " "
 " Using `deus` colorscheme
 
@@ -28,21 +27,10 @@ colorscheme deus
 
 autocmd FileType c,cpp,java,h,hpp,py,txt,md,sql autocmd BufWritePre <buffer> %s/\s\+$//e
 
-" also show EOLs as '$'
-" set list
-
-" "
-" Hybrid line numbers:
-"  abs for current & rel for other lines
-
 set nu
 
 " "
 " Keys
-
-" Ctrl+j or Ctrl+k to switch between panes
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
 
 " Use <S> and <s> to insert single character
 " Credits: https://vim.fandom.com/wiki/Insert_a_single_character
@@ -57,15 +45,3 @@ nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 set wrap
 set lbr
 
-" "
-" Set GVIM font (nice for 2K)
-
-set guifont=Consolas:h12
-
-" "
-" If it's Windows, add some folders
-"  to `runtimepath`
-
-if has('win32') || has('win64')
-  set runtimepath=$HOME/.vim,$HOME/vimfiles,$VIM/vimfiles
-endif
