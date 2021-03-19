@@ -19,8 +19,13 @@ alias grv='git remote -v'
 alias gar='git add remote'
 alias gm='git merge'
 
+# For Bash
 alias br='. ~/.bashrc'    # bash read
 alias be='vim ~/.bashrc'  # bash edit
+
+# For ZSH
+alias zr='. ~/.zshrc'
+alias ze='vim ~/.zshrc'
 
 alias ta='tmux attach'
 
