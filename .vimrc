@@ -44,6 +44,14 @@ set nu
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 
+" Use <S> and <s> to insert single character
+" Credits: https://vim.fandom.com/wiki/Insert_a_single_character
+function! RepeatChar(char, count)
+  return repeat(a:char, a:count)
+endfunction
+nnoremap s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
+nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
+
 " "
 " Whole word wrap leningr.. oh, sorry
 set wrap
