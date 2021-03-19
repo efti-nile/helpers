@@ -21,6 +21,7 @@ alias gs='git status'
 alias gsc='git config credential.helper store'  # git store credential
 
 alias git_minor='git pull && git add -A && git commit -m minor && git push'
+alias git_bugfix='git pull && git add -A && git commit -m bugfix && git push'
 
 # For Bash
 alias br='. ~/.bashrc'    # bash read
