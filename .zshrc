@@ -39,3 +39,28 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 source "$HOME/helpers/aliases.sh"
 source "$HOME/helpers/ssh_agent.sh"
 
+export EDITOR="$(which vim)"
+
+export LC_ALL=en_IN.UTF-8
+export LANG=en_IN.UTF-8
+
+# I like `pure` prompt. So install it
+if [[ -d "$HOME/.zshrc/pure" ]]; then
+    if [[ ! -d "$HOME/.zshrc" ]]; then
+        mkdir -p "$HOME/.zshrc"
+    fi
+    git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+fi
+
+# and enable
+fpath+=$HOME/.zsh/pure
+autoload -U promptinit; promptinit
+prompt pure
+
+# use less exotic symbols
+export PURE_PROMPT_SYMBOL='>'
+export PURE_PROMPT_SYMBOL='}'
+export PURE_GIT_DOWN_ARROW='↓'
+export PURE_GIT_UP_ARROW='↑'
+export PURE_GIT_STASH_SYMBOL='='
+
