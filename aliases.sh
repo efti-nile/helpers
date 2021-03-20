@@ -28,14 +28,18 @@ iconv_try () {
     iconv -f $2 -t $3 -o "$1.$3" $1
 }
 
-# For Bash
+# For bash
 alias br='. ~/.bashrc'    # bash read
 alias be='vim ~/.bashrc'  # bash edit
 
-# For ZSH
+# For zsh
 alias zr='. ~/.zshrc'
 alias ze='vim ~/.zshrc'
 
-alias ta='tmux attach'
-alias tns='tmux new -s'
+# For tmux
+alias ta='tmux attach'  # attach sessin by name
+alias tns='tmux new -s'  # create new session with given name
+alias tas='tmux attach-session -t'  # attach sessin by name
+alias tkl='tmux kill-session -t'  # kill session by name
+alias tls='tmux ls'  # list sessions
 
