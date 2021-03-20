@@ -22,10 +22,16 @@ set expandtab
 set pastetoggle=<F3>
 
 " "
-" Using `deus` colorscheme
+" "
+" Colors
 
 set t_Co=256
-colorscheme deus
+
+" warm dark theme
+" colorscheme deus
+
+" cold dark theme
+colorscheme murphy
 
 " "
 " Automatically removing trailing whitespace
