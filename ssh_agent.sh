@@ -23,13 +23,3 @@ elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
     ssh-add
 fi
 
-unset env
-
-# #
-# My github keys have prefix gh
-
-for f in ~/.ssh/gh*ed25519
-do
-    ssh-add $f 1> /dev/null
-done
-
