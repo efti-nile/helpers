@@ -1,4 +1,5 @@
-set encoding=utf-8
+set encoding=utf8
+set fileencoding=utf8
 
 " "
 " Set file type based indentation
@@ -22,10 +23,16 @@ set expandtab
 set pastetoggle=<F3>
 
 " "
-" Using `deus` colorscheme
+" "
+" Colors
 
 set t_Co=256
-colorscheme deus
+
+" warm dark theme
+" colorscheme deus
+
+" cold dark theme
+colorscheme murphy
 
 " "
 " Automatically removing trailing whitespace
