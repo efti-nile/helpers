@@ -16,6 +16,11 @@ set shiftwidth=4
 " on pressing tab, insert 4 spaces
 set expandtab
 
+" Use <F3> to enable paste mode
+"  In this mode autoindentation doesn't spoil indentation
+"  like it does in insert mode
+set pastetoggle=<F3>
+
 " "
 " Using `deus` colorscheme
 
