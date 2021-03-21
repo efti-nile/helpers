@@ -1,5 +1,6 @@
-set encoding=utf8
-set fileencoding=utf8
+set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
 
 " "
 " Set file type based indentation
