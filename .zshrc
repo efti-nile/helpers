@@ -59,7 +59,7 @@ prompt pure
 
 # use less exotic symbols
 export PURE_PROMPT_SYMBOL='>'
-export PURE_PROMPT_SYMBOL='}'
+export PURE_PROMPT_VICMD_SYMBO='<'
 export PURE_GIT_DOWN_ARROW='↓'
 export PURE_GIT_UP_ARROW='↑'
 export PURE_GIT_STASH_SYMBOL='='
