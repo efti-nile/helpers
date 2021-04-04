@@ -33,7 +33,7 @@ set t_Co=256
 " colorscheme deus
 
 " cold dark theme
-colorscheme murphy
+colorscheme koehler
 
 " "
 " Automatically removing trailing whitespace
