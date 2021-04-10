@@ -1,3 +1,6 @@
+" "
+" General
+
 set encoding=utf-8
 set fileencoding=utf-8
 set termencoding=utf-8
@@ -20,36 +23,37 @@ set shiftwidth=4
 " on pressing tab, insert 4 spaces
 set expandtab
 
-" Use <F3> to enable paste mode
-"  In this mode autoindentation doesn't spoil indentation
-"  like it does in insert mode
+" use <F3> to enable paste mode
+"  In this mode autoindentation doesn't spoil indentation of fragment
+"  being inserted like it does in insert mode
 set pastetoggle=<F3>
 
-" "
+" reletive line numbers
+set rnu
+
+
 " "
 " Colors
 
 set t_Co=256
 
-" warm dark theme
-" colorscheme deus
-
-" cold dark theme
+" dark theme
 colorscheme koehler
+
 
 " "
 " Automatically removing trailing whitespace
 
 autocmd FileType c,cpp,java,h,hpp,py,txt,md,sql autocmd BufWritePre <buffer> %s/\s\+$//e
 
-set rnu
 
 " "
 " Keys
 
 " Esc is too far for my lazyness
 inoremap jkl <ESC>
-inoremap JKL <ESC>
+" inoremap JKL <ESC> commented out - actually lowercase jkl helps me to notice CapsLock
+" before entering normal mode
 
 " Use <S> and <s> to insert single character
 " Credits: https://vim.fandom.com/wiki/Insert_a_single_character
