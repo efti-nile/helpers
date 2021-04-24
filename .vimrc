@@ -7,6 +7,7 @@ set termencoding=utf-8
 
 set nocompatible
 
+
 " "
 " Set file type based indentation
 "  folder `indent` contains an indentation
@@ -33,15 +34,6 @@ set rnu
 
 
 " "
-" Colors
-
-set t_Co=256
-
-" dark theme
-colorscheme koehler
-
-
-" "
 " Automatically removing trailing whitespace
 
 autocmd FileType c,cpp,java,h,hpp,py,txt,md,sql autocmd BufWritePre <buffer> %s/\s\+$//e
@@ -62,6 +54,7 @@ function! RepeatChar(char, count)
 endfunction
 nnoremap s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
 nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
+
 
 " "
 " Whole word wrap leningr.. oh, sorry
