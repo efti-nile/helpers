@@ -9,3 +9,7 @@
 - F6 - resume program
 - F4 - toggle line breakpoint
 - F3 - step over
+- Alt + Left - navigate back
+- Alt + Right - navigate forward
+- Ctrl + PgUp - preveous tab
+- Ctrl + PgDn - next tab
