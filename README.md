@@ -1,8 +1,8 @@
 # helpers
 
 ## Pycharm
-- Alt + F12 - os terminal
-- Alt + F11 - py terminal
+- Alt + 7 - os terminal
+- Alt + 8 - py terminal
 - Alt + 0 - context menu
 - F5 - debug
 - Alt + F5 - stop
