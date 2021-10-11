@@ -84,4 +84,9 @@ alias gpl='git pull'
 # work with branches
 alias gcb='git checkout -b'  # new branch
 alias gb='git branch -a'  # list remote and local branches
+alias gch='git checkout'
+
+# work with repos
+alias gcl='git clone'
+
 
