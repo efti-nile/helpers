@@ -39,7 +39,8 @@ alias cnd='conda deactivate'
 alias cna='conda activate'
 alias cnc='conda create --name'
 alias cni='conda install'
-alias cnl='conda info --envs'
+alias cnle='conda info --envs'
+alias cnlp='conda list'
 
 alias jl='jupyter lab --no-browser'
 
