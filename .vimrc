@@ -44,6 +44,7 @@ autocmd FileType c,cpp,java,h,hpp,py,txt,md,sql autocmd BufWritePre <buffer> %s/
 
 " Esc is too far for my lazyness
 inoremap jkl <ESC>
+inoremap олд <ESC>
 " inoremap JKL <ESC> commented out - actually lowercase jkl helps me to notice CapsLock
 " before entering normal mode
 
@@ -61,3 +62,4 @@ nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 set wrap
 set lbr
 
+:set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
