@@ -29,8 +29,8 @@ set expandtab
 "  being inserted like it does in insert mode
 set pastetoggle=<F3>
 
-" reletive line numbers
-set rnu
+" hybrid line numbers
+set nu rnu
 
 
 " "
