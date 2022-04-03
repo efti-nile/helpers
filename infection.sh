@@ -32,7 +32,7 @@ apt update
 apt -y install    \
     docker-ce     \
     docker-ce-cli \
-    containerd.io 
+    containerd.io
 
 # Install Desktop Environment
 apt -y install
@@ -67,3 +67,10 @@ sudo chsh -s "$(which zsh)" "$USER"
 
 # Install Russian language pack
 sudo apt -y install language-pack-ru
+
+# Add ft to docker group
+sudo usermod -aG docker "$USER"
+
+# Start docker at system start up
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
