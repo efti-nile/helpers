@@ -57,10 +57,10 @@ vncserver
 
 # Download configs (under ft)
 cd "$HOME"
-wget https://github.com/efti-nile/helpers/raw/main/.zshrc
-wget https://github.com/efti-nile/helpers/raw/main/.vimrc
-wget https://github.com/efti-nile/helpers/raw/main/aliases.sh
-wget https://github.com/efti-nile/helpers/raw/main/.tmux.conf
+wget -O .zshrc https://github.com/efti-nile/helpers/raw/main/.zshrc
+wget -O .vimrc https://github.com/efti-nile/helpers/raw/main/.vimrc
+wget -O aliases.sh https://github.com/efti-nile/helpers/raw/main/aliases.sh
+wget -O .tmux.conf https://github.com/efti-nile/helpers/raw/main/.tmux.conf
 
 # Change default interpretator to Zsh (for ft)
 sudo chsh -s "$(which zsh)" "$USER"
