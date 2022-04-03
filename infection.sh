@@ -36,7 +36,7 @@ apt install firefox
 
 su ft
 
-# Setting up VNC
+# Setting up VNC (under ft)
 vncserver
 # enter vnc password
 vncserver -kill :1
@@ -45,5 +45,14 @@ echo '#!/bin/bash
 xrdb '"$HOME"'/.Xresources
 startxfce4 &
 ' > ~/.vnc/xstartup
+sudo chmod +x ~/.vnc/xstartup
+vncserver
 
-zsh  # create .zshrc at first start
+# Download configs
+cd "$HOME"
+wget https://github.com/efti-nile/helpers/raw/main/.zshrc
+wget https://github.com/efti-nile/helpers/raw/main/.vimrc
+wget https://github.com/efti-nile/helpers/raw/main/aliases.sh
+wget https://github.com/efti-nile/helpers/raw/main/.tmux.conf
+
+sudo chsh -s $(which zsh)
