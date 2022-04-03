@@ -37,4 +37,6 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # Custom Stuff
 
-export EDITOR=/usr/bin/vim
+export EDITOR="$(which vim)"
+source "$HOME/aliases.sh"
+export LANG="ru_RU.UTF-8"
