@@ -13,7 +13,8 @@ apt -y install \
     tmux       \
     vim        \
     git        \
-    snapd
+    snapd      \
+    wget
     
 # Install Oh-My-Zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
