@@ -52,7 +52,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # Try to get aliases from Internet
 cd
-wget -O aliases.sh https://github.com/efti-nile/helpers/raw/main/aliases.sh
+wget -O aliases.sh https://github.com/efti-nile/helpers/raw/main/aliases.sh >/dev/null 2>&1
 if [[ -f aliases.sh ]]; then 
   source "$HOME/aliases.sh"
 fi
