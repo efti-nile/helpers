@@ -1,18 +1,34 @@
-# Set up the prompt
+# Common ENV variables
+export EDITOR='vim'
+export GIT_EDITOR='vim'
+export SHELL='/bin/zsh'
 
+# Fix Locale
+# export LC_ALL=en_US.UTF-8
+# export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# History
+export HISTSIZE=500000
+export HISTFILE="$HOME/.history"
+export SAVEHIST=$HISTSIZE
+
+# Fancy Prompt
 autoload -Uz promptinit
 promptinit
 prompt adam1
 
-setopt histignorealldups sharehistory
+# Do not enter command lines into the history list if they are duplicates of the
+# previous event.
+setopt histignorealldups
+# Switching directories for lazy people
+setopt autocd
+# Share history between zsh terminals
+setopt sharehistory
 
-# Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
-
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
-HISTFILE=~/.zsh_history
+# Use vim keybindings
+bindkey -v
 
 # Use modern completion system
 autoload -Uz compinit
@@ -31,12 +47,12 @@ zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:
 zstyle ':completion:*' menu select=long
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl false
-
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# Custom Stuff
-
-export EDITOR="$(which vim)"
-source "$HOME/aliases.sh"
-export LANG="ru_RU.UTF-8"
+# Try to get aliases from Internet
+cd
+wget -O aliases.sh https://github.com/efti-nile/helpers/raw/main/aliases.sh
+if [[ -f aliases.sh ]]; then 
+  source "$HOME/aliases.sh"
+fi
