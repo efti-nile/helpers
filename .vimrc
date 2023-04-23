@@ -62,4 +62,10 @@ nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 set wrap
 set lbr
 
+" "
+" Using <Enter> to insert a blank line without leaving normal mode
+nnoremap <Enter> i<Enter><Esc>k$
+
+" "
+" Bindings to use Russian layout in normal mode
 :set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
