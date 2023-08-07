@@ -2,6 +2,16 @@
 
 # wget https://github.com/efti-nile/helpers/raw/main/infection.sh && chmod +x infection.sh && source infection.sh
 
+if [ "$EUID" -ne 0 ]; then
+    echo "This script must be run as root."
+    exit 1
+fi
+
+if [ ! "$(grep -E '^ID=ubuntu' /etc/os-release)" ]; then
+    echo "This is not Ubuntu."
+    exit 2
+fi
+
 apt update && apt upgrade
 
 adduser ft
@@ -75,3 +85,5 @@ sudo usermod -aG docker "$USER"
 # Start docker at system start up
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
+
+# TODO: generate key pair for GitHub
