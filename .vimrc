@@ -69,3 +69,19 @@ nnoremap <Enter> i<Enter><Esc>k$
 " "
 " Bindings to use Russian layout in normal mode
 :set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
+" "
+" Vim functions for setting tab width
+function! SetTabWidth2()
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
+  set expandtab
+endfunction
+
+function! SetTabWidth4()
+  set tabstop=4
+  set softtabstop=4
+  set shiftwidth=4
+  set expandtab
+endfunction
