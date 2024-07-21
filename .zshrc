@@ -1,11 +1,8 @@
-# Common ENV variables
 export EDITOR='vim'
 export GIT_EDITOR='vim'
 export SHELL='/bin/zsh'
 
-# Fix Locale
-# export LC_ALL=en_US.UTF-8
-# export LANG=en_US.UTF-8
+# Locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -15,14 +12,14 @@ export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
 
 # Fancy Prompt
+# Using zsh-style (-z) autoloading, preventing alias expension (-U),
 autoload -Uz promptinit
-promptinit
-prompt adam1
+promptinit  # run the function
+prompt adam1  # set promt theme to `adam1`
 
-# Do not enter command lines into the history list if they are duplicates of the
-# previous event.
+# Don't save duplicates in the history
 setopt histignorealldups
-# Switching directories for lazy people
+# Changing directory without `cd`
 setopt autocd
 # Share history between zsh terminals
 setopt sharehistory
@@ -30,10 +27,11 @@ setopt sharehistory
 # Use vim keybindings
 bindkey -v
 
-# Use modern completion system
+# Init the completion system
 autoload -Uz compinit
 compinit
 
+# Configure the completion system
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
@@ -49,10 +47,3 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-
-# Try to get aliases from Internet
-cd
-wget -O aliases.sh https://github.com/efti-nile/helpers/raw/main/aliases.sh >/dev/null 2>&1
-if [[ -f aliases.sh ]]; then 
-  source "$HOME/aliases.sh"
-fi
