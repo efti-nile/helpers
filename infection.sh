@@ -30,7 +30,9 @@ apt -y install \
     snapd      \
     wget       \
     sudo       \
-    htop
+    htop       \
+    curl       \
+    zsh
     
 # Add a non-root user
 NEW_USER=${NEW_USER:-ft}
@@ -44,9 +46,6 @@ sudo -u $NEW_USER cat /home/$NEW_USER/.ssh/id_ed25519.pub >> /home/$NEW_USER/.ss
 chmod 600 /home/$NEW_USER/.ssh/authorized_keys
 chmod 700 /home/$NEW_USER/.ssh
 usermod -aG sudo $NEW_USER
-
-# Install Oh-My-Zsh
-sudo -u $NEW_USER sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install docker
 if [ -z ${INSTALL_DOCKER+x} ]; then
@@ -98,6 +97,9 @@ if [ -z ${INSTALL_VNC+x} ]; then
     sudo chmod +x ~/.vnc/xstartup
     vncserver
 fi
+
+# Install Oh-My-Zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Download configs (under NEW_USER)
 cd ~
