@@ -113,8 +113,5 @@ if [ -z ${INSTALL_VNC+x} ]; then
     vncserver
 fi
 
-# Install Oh-My-Zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # Change default interpretator to Zsh (under NEW_USER)
 sudo chsh -s "$(which zsh)" "$USER"
