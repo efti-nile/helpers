@@ -9,6 +9,14 @@
 #   - INSTALL_XFCE:   if set, Xfce will be installed
 #   - INSTALL_VNC:    if set, a VNC server will be installed and set up
 
+download_configs() {
+    cd ~
+    wget -O .zshrc https://github.com/efti-nile/helpers/raw/main/.zshrc
+    wget -O .vimrc https://github.com/efti-nile/helpers/raw/main/.vimrc
+    wget -O aliases.sh https://github.com/efti-nile/helpers/raw/main/aliases.sh
+    wget -O .tmux.conf https://github.com/efti-nile/helpers/raw/main/.tmux.conf
+}
+
 if [ "$EUID" -ne 0 ]; then
     echo "This script must be run as root!"
     exit 1
@@ -32,7 +40,11 @@ apt -y install \
     sudo       \
     htop       \
     curl       \
-    zsh
+    zsh        \
+    netstat
+
+# Download CLI configs for root
+download_configs
     
 # Add a non-root user
 NEW_USER=${NEW_USER:-ft}
@@ -83,6 +95,9 @@ fi
 
 su $NEW_USER
 
+# Download CLI configs for NEW_USER
+download_configs
+
 # Setting up VNC (under NEW_USER)
 if [ -z ${INSTALL_VNC+x} ]; then
     sudo apt -y install tightvncserver
@@ -100,13 +115,6 @@ fi
 
 # Install Oh-My-Zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# Download configs (under NEW_USER)
-cd ~
-wget -O .zshrc https://github.com/efti-nile/helpers/raw/main/.zshrc
-wget -O .vimrc https://github.com/efti-nile/helpers/raw/main/.vimrc
-wget -O aliases.sh https://github.com/efti-nile/helpers/raw/main/aliases.sh
-wget -O .tmux.conf https://github.com/efti-nile/helpers/raw/main/.tmux.conf
 
 # Change default interpretator to Zsh (under NEW_USER)
 sudo chsh -s "$(which zsh)" "$USER"
