@@ -1,21 +1,25 @@
 # helpers
 
-## Pycharm
-- Alt + 7 - os terminal
-- Alt + 8 - py terminal
-- Alt + 0 - context menu
-- F5 - debug
-- Alt + F5 - stop
-- F6 - resume program
-- F4 - toggle line breakpoint
-- F3 - step over
-- Alt + Left - navigate back
-- Alt + Right - navigate forward
-- Ctrl + PgUp - preveous tab
-- Ctrl + PgDn - next tab
-- Ctrl + Shift + - - collapse all
-- Ctrl + Alt + 7 - expand to level 1
-- Ctrl + Alt + 8 - expand to level 2
-- Ctrl + Alt + 9 - expand to level 3
-- Ctrl + Alt + 0 - expand to level 4
-- Ctrl + Alt + - - expand to level 5
+## CLI configs
+
+- `.zshrc` is the configuration file for the Zsh shell.
+- `.vimrc` is the configuration file for the Vim text editor.
+- `.tmux.conf` is the configuration file for the Tmux terminal multiplexer.
+- `aliases.sh` sets aliases.
+
+## `infection.sh`
+
+This script installs the necessary tools and configurations for a newly created Ubuntu or Debian server. The following environment variables can be set:
+
+- `NEW_USER`: name for the new user (default: ft)
+- `INSTALL_DOCKER`: if set, Docker will be installed
+- `INSTALL_XFCE`:   if set, Xfce will be installed
+- `INSTALL_VNC`:    if set, a VNC server will be installed and set up
+
+Use:
+
+```bash
+wget https://github.com/efti-nile/helpers/raw/main/infection.sh
+chmod +x infection.sh
+NEW_USER=Jhon INSTALL_DOCKER=1 source infection.sh
+```
