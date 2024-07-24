@@ -1,18 +1,11 @@
-# #
-# General CLI-utilities
-
-# ls
+# a comprehensive list of all files (including '.' and '..').
 alias ll='ls -alF'
+
+# a simple list of all files
 alias la='ls -A'
+
+# a columned list of regular files
 alias l='ls -CF'
-
-# bash
-alias br='. ~/.bashrc'    # bash read
-alias be='vim ~/.bashrc'  # bash edit
-
-# zsh
-alias zr='. ~/.zshrc'     # zsh read
-alias ze='vim ~/.zshrc'   # zsh edit
 
 # tmux
 alias ta='tmux attach'  # attach sessin by name
@@ -32,9 +25,8 @@ fi
 
 
 # #
-# Python
+# Conda
 
-# conda
 alias cnd='conda deactivate'
 alias cna='conda activate'
 alias cnc='conda create --name'
@@ -42,8 +34,6 @@ alias cni='conda install'
 alias cnle='conda info --envs'
 alias cnlp='conda list'
 alias cnrm='conda env remove -n'
-
-alias jl='jupyter lab --no-browser'
 
 
 # #
@@ -89,5 +79,3 @@ alias gch='git checkout'
 
 # work with repos
 alias gcl='git clone'
-
-
