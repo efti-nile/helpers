@@ -54,7 +54,7 @@ alias gmv='git mv'
 # work with commits
 alias gc='git commit'
 alias gcm='git commit -m'
-alias gca='git commit --amend'
+alias gca='git commit -a --amend -m'
 alias gd='git diff'
 alias gm='git merge'
 g_short_commit () {
