@@ -31,9 +31,9 @@ alias cnd='conda deactivate'
 alias cna='conda activate'
 alias cnc='conda create --name'
 alias cni='conda install'
-alias cnle='conda info --envs'
-alias cnlp='conda list'
-alias cnrm='conda env remove -n'
+alias cnie='conda info --envs'
+alias cnl='conda list'
+alias cnerm='conda env remove -n'
 
 
 # #
@@ -79,3 +79,15 @@ alias gch='git checkout'
 
 # work with repos
 alias gcl='git clone'
+
+
+# #
+# Docker
+
+alias dps='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.CreatedAt}}\t{{.Ports}}"'
+
+alias dcu='docker compose up -d'
+alias dcub='docker compose up --build -d'
+alias dcd='docker compose down'
+alias dcl='docker logs -f --tail 100'
+
