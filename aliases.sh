@@ -71,6 +71,7 @@ alias gar='git add remote'
 alias grv='git remote -v'
 alias gph='git push'
 alias gpl='git pull'
+alias gf='git fetch'
 
 # work with branches
 alias gcb='git checkout -b'  # new branch
