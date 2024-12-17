@@ -8,11 +8,11 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # tmux
-alias ta='tmux attach'  # attach sessin by name
-alias tns='tmux new -s'  # create new session with given name
-alias tas='tmux attach-session -t'  # attach sessin by name
-alias tks='tmux kill-session -t'  # kill session by name
-alias tls='tmux ls'  # list sessions
+alias ta='tmux attach'              # attach last session
+alias tls='tmux ls'                 # list sessions
+alias tns='tmux new -s'             # new session by name
+alias tas='tmux attach-session -t'  # attach session by name
+alias tks='tmux kill-session -t'    # kill session by name
 
 # colors for ls, grep
 if [ -x /usr/bin/dircolors ]; then
@@ -75,7 +75,7 @@ alias gf='git fetch'
 
 # work with branches
 alias gcb='git checkout -b'  # new branch
-alias gb='git branch -a'  # list remote and local branches
+alias gb='git branch -a'     # list remote and local branches
 alias gch='git checkout'
 
 # work with repos
@@ -85,10 +85,36 @@ alias gcl='git clone'
 # #
 # Docker
 
+# system-wide
 alias dps='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.CreatedAt}}\t{{.Ports}}"'
+alias dsdf='docker system df'
+alias dsp='docker system prune -a --volumes'
 
+# application-wide
 alias dcu='docker compose up -d'
 alias dcub='docker compose up --build -d'
 alias dcd='docker compose down'
-alias dcl='docker logs -f --tail 100'
+
+# container-wide
+alias ds='docker stats'
+alias dl='docker logs -f --tail 100'
+# execute bash in container:
+desh () {
+    local container="$1"
+    docker exec -it "$container" bash
+}
+# execute bash in image:
+drsh () {
+    local image="$1"
+    docker run -it "$image" bash
+}
+# run sticky log:
+dls () {
+    local container="$1"
+    while true; do
+        docker logs -f --tail 100 "$container"
+        echo "Container $container stopped. Reconnecting to logs..."
+        sleep 5
+    done
+}
 
