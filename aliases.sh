@@ -118,3 +118,23 @@ dls () {
     done
 }
 
+
+# #
+# Files
+
+# Function to unpack each *.tar.gz into a new folder with the same name
+untargz_all() {
+  for file in *.tar.gz; do
+    folder="${file%.tar.gz}"      # Remove the .tar.gz extension to get the folder name
+    mkdir -p "$folder"            # Create the folder
+    tar -xzf "$file" -C "$folder" # Extract the archive into the folder
+  done
+}
+
+# Function to count files in folders, outputs result as "{path}: {files_count}"
+count_files_in_folders() {
+  for folder in */; do
+    count=$(find "$folder" -type f | wc -l)
+    echo "$folder: $count files"
+  done
+}
