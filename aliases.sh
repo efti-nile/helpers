@@ -1,5 +1,5 @@
 # a comprehensive list of all files (including '.' and '..').
-alias ll='ls -alF'
+alias ll='ls -ahlF'
 
 # a simple list of all files
 alias la='ls -A'
