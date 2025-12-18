@@ -1,5 +1,34 @@
 # helpers
 
+## Computer Vision default Jupyter imports
+
+```python
+import io
+import itertools
+import json
+import os
+import pickle
+import re
+import shutil
+import sys
+from collections import OrderedDict, defaultdict, namedtuple
+from datetime import datetime
+from pathlib import Path
+from pprint import pformat, pprint
+from typing import Any
+
+import cv2
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from PIL import Image, ImageDraw, ImageFont
+
+# the parent folder considered as the repository root
+repo_root = Path.cwd().parent
+if str(repo_root) not in sys.path:
+    sys.path.append(str(repo_root))
+```
+
 ## CLI configs
 
 - `.zshrc` is the configuration file for the Zsh shell.
