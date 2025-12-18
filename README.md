@@ -3,6 +3,7 @@
 ## Computer Vision default Jupyter imports
 
 ```python
+import base64
 import io
 import itertools
 import json
@@ -21,6 +22,7 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from IPython.display import HTML, display
 from PIL import Image, ImageDraw, ImageFont
 
 # the parent folder considered as the repository root
