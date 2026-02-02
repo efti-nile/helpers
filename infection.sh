@@ -35,13 +35,11 @@ apt -y install \
     tmux       \
     vim        \
     git        \
-    snapd      \
     wget       \
     sudo       \
     htop       \
     curl       \
-    zsh        \
-    netstat
+    zsh
 
 # Download CLI configs for root
 download_configs
