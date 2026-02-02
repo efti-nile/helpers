@@ -31,6 +31,12 @@ if str(repo_root) not in sys.path:
     sys.path.append(str(repo_root))
 ```
 
+## Starship
+
+```bash
+curl -sS https://starship.rs/install.sh | sh
+```
+
 ## CLI configs
 
 - `.zshrc` is the configuration file for the Zsh shell.
