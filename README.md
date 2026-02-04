@@ -37,6 +37,20 @@ if str(repo_root) not in sys.path:
 curl -sS https://starship.rs/install.sh | sh
 ```
 
+## Windsurf
+
+Put in `.vscode/settings.json`:
+
+```json
+{
+    "editor.lineNumbers": "relative",  // use relative line numbers
+    "git.ignoreLimitWarning": true,    // don't give a fuck when too many files changed
+    "vim.handleKeys": {
+        "<C-p>": false                 // use Ctrl+P to switch the current file (as usual for VScode and the like)
+    },
+}
+```
+
 ## CLI configs
 
 - `.zshrc` is the configuration file for the Zsh shell.
