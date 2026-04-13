@@ -37,6 +37,12 @@ if str(repo_root) not in sys.path:
 curl -sS https://starship.rs/install.sh | sh
 ```
 
+## Tmux Plugin Manager (TPM)
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
 ## Windsurf
 
 Put in `.vscode/settings.json`:
