@@ -80,3 +80,9 @@ export GIT_EDITOR='vim'
 
 # changing directory without `cd`:
 setopt autocd
+
+# enable extended globbing (advanced wildcard matching):
+setopt EXTENDED_GLOB
+
+# enable comments in interactive shells (to paste code with comments)
+setopt INTERACTIVE_COMMENTS
