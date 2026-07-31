@@ -108,12 +108,20 @@ drsh () {
     local image="$1"
     docker run -it "$image" bash
 }
-# run sticky log:
+# run sticky log, indicates container name in first line
 dls () {
     local container="$1"
     while true; do
-        docker logs -f --tail 100 "$container"
-        echo "Container $container stopped. Reconnecting to logs..."
+        tput cup 0 0
+        tput el
+        echo -e "\033[7m === Container: $container === \033[0m"
+        tput csr 1 $(tput lines)
+        tput cup 1 0
+
+        docker logs -f --tail 100 "$container" 2>&1
+
+        tput csr 0 $(tput lines)
+        echo "Container $container stopped. Reconnecting in 5s..."
         sleep 5
     done
 }
