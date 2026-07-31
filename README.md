@@ -54,6 +54,7 @@ Put in `.vscode/settings.json`:
     "vim.handleKeys": {
         "<C-p>": false                 // use Ctrl+P to switch the current file (as usual for VScode and the like)
     },
+    "editor.wordWrap": "on",
 }
 ```
 
