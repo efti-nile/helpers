@@ -43,7 +43,7 @@ curl -sS https://starship.rs/install.sh | sh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-## Windsurf
+## VSCode
 
 Put in `.vscode/settings.json`:
 
@@ -56,6 +56,19 @@ Put in `.vscode/settings.json`:
     },
     "editor.wordWrap": "on",
 }
+```
+
+Put in `.vscode/keybindings.json`:
+
+```json
+[
+    // Maximize the terminal panel
+    {
+        "key": "ctrl+shift+/",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "terminalFocus"
+    }
+]
 ```
 
 ## CLI configs
