@@ -75,6 +75,10 @@ alias gf='git fetch'
 
 # work with branches
 alias gcb='git checkout -b'  # new branch
+grb () {  # rebase current branch
+    local rebase_onto="$1"
+    git rebase "$rebase_onto" && git push --force-with-lease
+}
 alias gb='git branch -a'     # list remote and local branches
 alias gch='git checkout'
 
