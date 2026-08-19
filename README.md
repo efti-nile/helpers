@@ -74,6 +74,16 @@ Put in `.vscode/keybindings.json`:
         "key": "ctrl+l",
         "command": "devin.prioritized.chat.open",
         "when": "terminalFocus"
+    },
+    // Use Ctrl+Shift+B instead of Ctrl+B to toggle sidebar. Ctrl+B more
+    // useful as Vim's shortcut
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
     }
 ]
 ```
