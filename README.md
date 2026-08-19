@@ -61,11 +61,18 @@ Put in `.vscode/settings.json`:
 Put in `.vscode/keybindings.json`:
 
 ```json
+// Place your key bindings in this file to override the defaults
 [
-    // Maximize the terminal panel
+    // Maximize/unmaximize bottom panel when terminal is focused
     {
         "key": "ctrl+shift+/",
         "command": "workbench.action.toggleMaximizedPanel",
+        "when": "terminalFocus"
+    },
+    // Do not clear the terminal by Ctrl+L, focus the agent chat instead
+    {
+        "key": "ctrl+l",
+        "command": "devin.prioritized.chat.open",
         "when": "terminalFocus"
     }
 ]
