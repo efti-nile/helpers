@@ -1,0 +1,33 @@
+[user]
+    name = efti-nile
+    email = 10785173+efti-nile@users.noreply.github.com
+    # Your 16-character GPG key ID
+    signingkey = <KEY_ID>
+
+# Default branch name for newly initialized repositories
+[init]
+    defaultBranch = main
+
+[core]
+    editor = vim
+
+# Prevent messy merge commits when pulling remote changes
+[pull]
+    rebase = true
+
+# Automatically clean up local tracking branches if deleted on the remote
+[fetch]
+    prune = true
+
+# Automatically set upstream branch on your first push
+[push]
+    autoSetupRemote = true
+
+# Automatically sign all commits
+[commit]
+    gpgsign = true
+
+# Explicitly set the GPG binary to prevent path errors
+[gpg]
+    program = gpg
+
