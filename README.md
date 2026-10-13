@@ -88,12 +88,14 @@ Put in `.vscode/keybindings.json`:
 ]
 ```
 
-## CLI configs
+## Configs
 
 - `.zshrc` is the configuration file for the Zsh shell.
 - `.vimrc` is the configuration file for the Vim text editor.
 - `.tmux.conf` is the configuration file for the Tmux terminal multiplexer.
 - `aliases.sh` sets aliases.
+- `.gitconfig` base git config.
+
 
 ## `infection.sh`
 
