@@ -134,17 +134,25 @@ dls () {
 # #
 # When cd into a directory, show the directory content
 
-cd() {
-  builtin cd "$@" || return
-  local files=($(ls -1))
-  local count=${#files[@]}
+_list_dir_on_cd() {
+  local ls_out count
+  ls_out=$(command ls -1F --color=always 2>/dev/null || CLICOLOR_FORCE=1 command ls -1FG)
+  [[ -z "$ls_out" ]] && return 0
 
-  if [ "$count" -le 20 ]; then
-    ls -F
+  count=$(printf "%s\n" "$ls_out" | wc -l)
+
+  if (( count <= 20 )); then
+    command ls -F --color=auto 2>/dev/null || command ls -FG
   else
-    printf "%s\n" "${files[@]:0:10}"
+    printf "%s\n" "$ls_out" | head -n 10
     echo "..."
-    printf "%s\n" "${files[@]: -10}"
-    echo "--- $count files total ---"
+    printf "%s\n" "$ls_out" | tail -n 10
+    echo "--- $((count)) files total ---"
   fi
 }
+
+if [[ -n "$ZSH_VERSION" ]]; then
+  chpwd_functions+=(_list_dir_on_cd)
+else
+  cd() { builtin cd "$@" && _list_dir_on_cd; }
+fi
