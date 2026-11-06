@@ -100,6 +100,7 @@ function preexec() {
     print -Pn "\e]0;$1\a"
 }
 
+
 # #
 # Use fancy `batcat` if installed
 
@@ -107,4 +108,12 @@ if command -v batcat &> /dev/null; then
     alias cat='batcat'
 else
     alias cat='/bin/cat'
+fi
+
+
+# #
+# Use fancy `btop` if installed
+
+if command -v btop &> /dev/null; then
+    alias htop='btop'
 fi
