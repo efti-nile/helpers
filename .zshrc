@@ -86,3 +86,16 @@ setopt EXTENDED_GLOB
 
 # enable comments in interactive shells (to paste code with comments)
 setopt INTERACTIVE_COMMENTS
+
+
+# #
+# Update Guake / terminal tab title with current command
+autoload -Uz add-zsh-hook
+
+function precmd() {
+    print -Pn "\e]0;%~\a"
+}
+
+function preexec() {
+    print -Pn "\e]0;$1\a"
+}
