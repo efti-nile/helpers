@@ -54,6 +54,8 @@ fi
 if [ -f ~/aliases.sh ]; then
   source ~/aliases.sh
 fi
+
+
 # #
 # History & Recursive search
 
@@ -85,7 +87,6 @@ bindkey '^S' history-incremental-pattern-search-forward
 # Vi-mode compatibility (ensures Ctrl+R/S work in Vi Command Mode)
 bindkey -M vicmd '^R' history-incremental-pattern-search-backward
 bindkey -M vicmd '^S' history-incremental-pattern-search-forward
-
 
 
 # #
