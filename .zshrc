@@ -54,20 +54,38 @@ fi
 if [ -f ~/aliases.sh ]; then
   source ~/aliases.sh
 fi
-
-
 # #
-# History
+# History & Recursive search
 
-export HISTSIZE=500000
+# --- Storage Limits & File Paths ---
 export HISTFILE="$HOME/.history"
+export HISTSIZE=500000
 export SAVEHIST=$HISTSIZE
-# don't save duplicates in the history:
-setopt histignorealldups
-# share history between zsh terminals:
-setopt sharehistory
-# enable reverse search with Ctrl + R:
-bindkey '^R' history-incremental-search-backward
+
+# --- Filtering & Cleanliness ---
+setopt hist_ignore_space       # Do not record lines beginning with a space
+setopt hist_ignore_all_dups    # Remove older duplicates when a new duplicate is run
+setopt hist_save_no_dups       # Do not write duplicate lines into ~/.history
+setopt hist_find_no_dups       # Skip duplicates when searching through history
+setopt hist_reduce_blanks      # Strip extra trailing and internal whitespace
+
+# --- Multi-Session Sharing & Immediate Persistence ---
+setopt share_history           # Share command history live across all open terminals
+setopt inc_append_history      # Write commands to ~/.history as soon as they are executed
+
+# --- Safety & Verification ---
+setopt hist_verify             # Show recalled command for editing before running it
+setopt hist_expire_dups_first  # Purge duplicate entries first when HISTSIZE is reached
+
+# --- Keybindings & Recursive Pattern Search (Ctrl + R / Ctrl + S) ---
+# Backward & forward incremental pattern search
+bindkey '^R' history-incremental-pattern-search-backward
+bindkey '^S' history-incremental-pattern-search-forward
+
+# Vi-mode compatibility (ensures Ctrl+R/S work in Vi Command Mode)
+bindkey -M vicmd '^R' history-incremental-pattern-search-backward
+bindkey -M vicmd '^S' history-incremental-pattern-search-forward
+
 
 
 # #
